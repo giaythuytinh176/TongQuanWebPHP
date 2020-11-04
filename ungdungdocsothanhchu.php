@@ -34,7 +34,7 @@ function parse4($number)
     $hangchuc = substr($number, 1, 1);
     $donvi = substr($number, 2, 1);
     $ht = hangdonvi($hangtram) . " hundred";
-    $toNum = $ht . " and " . parse3($hangchuc.$donvi);
+    $toNum = $ht . " and " . parse3($hangchuc . $donvi);
     return $toNum;
 }
 
@@ -43,35 +43,8 @@ function parse3($number)
 {
     $hangchuc = substr($number, 0, 1);
     $donvi = substr($number, 1, 1);
-    switch ($hangchuc) {
-        case 2:
-            $hc = "twenty";
-            break;
-        case 3:
-            $hc = "thirty";
-            break;
-        case 4:
-            $hc = "fourty";
-            break;
-        case 5:
-            $hc = "fivety";
-            break;
-        case 6:
-            $hc = "sixty";
-            break;
-        case 7:
-            $hc = "seventy";
-            break;
-        case 8:
-            $hc = "eighty";
-            break;
-        case 9:
-            $hc = "ninety";
-            break;
-    }
-
+    $hc = hangdonvi($hangchuc) . "ty";
     $dv = hangdonvi($donvi);
-
     $toNum = $hc . " " . $dv;
     return $toNum;
 }
