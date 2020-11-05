@@ -90,7 +90,7 @@ function hangchuc($number)
         case 14:
             return "fourteen";
         case 15:
-            return "fiveteen";
+            return "fifteen";
         case 16:
             return "sixteen";
         case 17:
