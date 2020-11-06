@@ -32,9 +32,9 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    if (isset($_POST['FirstOperand']) && isset($_POST['SecondOperand']) && isset($_POST['btn'])) {
-        $FirstOperand = (float)$_POST['FirstOperand'];
-        $SecondOperand = (float)$_POST['SecondOperand'];
+    if (!empty($_POST['FirstOperand']) && !empty($_POST['SecondOperand']) && !empty($_POST['btn'])) {
+        $FirstOperand = (float) $_POST['FirstOperand'];
+        $SecondOperand = (float) $_POST['SecondOperand'];
         $operator = $_POST['btn'];
         if ($operator == "+") {
             $result = $FirstOperand + $SecondOperand;
@@ -47,11 +47,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $result = "Số thứ 2 ko thể là 0. Mời nhập lại.";
             } else $result = $FirstOperand / $SecondOperand;
         }
+
         ?>
 
         <script>
-            document.getElementById("first").value = <?php echo $FirstOperand?>;;
-            document.getElementById("second").value = <?php echo $SecondOperand?>;;
+            document.getElementById("first").value = <?php echo $FirstOperand?>;
+            document.getElementById("second").value = <?php echo $SecondOperand?>;
         </script>
 
         <?php
