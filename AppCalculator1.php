@@ -7,9 +7,13 @@
             display: inline-block;
             margin: 3em;
             width: 555px;
-            height: 250px;
+            height: 300px;
         }
-
+        #submit {
+            border-radius: 2px;
+            padding: 10px 32px;
+            font-size: 30px;
+        }
     </style>
 </header>
 
@@ -62,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         echo $result;
         echo "</h1>";
     } else {
-        echo "Bạn chưa nhập.";
+        echo "<h2>Bạn chưa nhập.</h2>";
     }
 
 }
