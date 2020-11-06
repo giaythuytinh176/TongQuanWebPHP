@@ -43,15 +43,21 @@ function parse3($number)
 {
     $hangchuc = substr($number, 0, 1);
     $donvi = substr($number, 1, 1);
-    $hc = hangdonvi($hangchuc) . "ty";
+    $hc = hangdonvi($hangchuc, 1) . "ty";
     $dv = hangdonvi($donvi);
     $toNum = $hc . " " . $dv;
     return $toNum;
 }
 
 
-function hangdonvi($number)
+function hangdonvi($number, $a = 0)
 {
+    if ($a == 1) {
+        switch ($number){
+            case 2:
+                return "twen";
+        }
+    }
     switch ($number) {
         case 0:
             return "zero";
