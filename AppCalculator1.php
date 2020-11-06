@@ -6,6 +6,8 @@
         .inline {
             display: inline-block;
             margin: 3em;
+            width: 555px;
+            height: 250px;
         }
 
     </style>
@@ -27,7 +29,7 @@
         <input type="submit" name="btn" id="submit" value="/">
         </select><br><br>
     </form>
-</fieldset>
+
 
 <?php
 
@@ -66,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 
 ?>
-
+</fieldset>
 
 </body>
 
