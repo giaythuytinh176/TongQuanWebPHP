@@ -33,19 +33,31 @@ function parse4($number)
     $hangtram = substr($number, 0, 1);
     $hangchuc = substr($number, 1, 1);
     $donvi = substr($number, 2, 1);
+    $trontram = false;
+    if ($hangchuc == 1) {
+        $parse = hangchuc($hangchuc . $donvi);
+    } else {
+        $parse = parse3($hangchuc . $donvi);
+    }
+    if ($hangchuc == 0 && $donvi == 0) {
+        $trontram = true;
+    }
     $ht = hangdonvi($hangtram) . " hundred";
-    $toNum = $ht . " and " . parse3($hangchuc . $donvi);
+    $toNum = $ht . ($trontram ? '' : (" and " . $parse));
     return $toNum;
 }
-
 
 function parse3($number)
 {
     $hangchuc = substr($number, 0, 1);
     $donvi = substr($number, 1, 1);
     $hc = hangdonvi($hangchuc, 1) . "ty";
+    $rm_zero = false;
+    if ($donvi == 0) {
+        $rm_zero = true;
+    }
     $dv = hangdonvi($donvi);
-    $toNum = $hc . " " . $dv;
+    $toNum = $hc . ($rm_zero ? '' : (" " . $dv));
     return $toNum;
 }
 
@@ -53,7 +65,7 @@ function parse3($number)
 function hangdonvi($number, $a = 0)
 {
     if ($a == 1) {
-        switch ($number){
+        switch ($number) {
             case 2:
                 return "twen";
         }
